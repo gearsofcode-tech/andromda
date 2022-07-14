@@ -29,16 +29,6 @@
         </default-render-kit-id>
     </application>
 #end
-    <factory>
-        <exception-handler-factory>
-            ${managedBeansPackage}.JsfExceptionHandlerFactory
-        </exception-handler-factory>
-    </factory>
-    <lifecycle>
-        <phase-listener>
-            ${managedBeansPackage}.UseCasePhaseListener
-        </phase-listener>
-    </lifecycle>
     <!-- forms -->
 ## *** should go to the configuration
 #set($formsScopeValue="#{useCaseScope}")

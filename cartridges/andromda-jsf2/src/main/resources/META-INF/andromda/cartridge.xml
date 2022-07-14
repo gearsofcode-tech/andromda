@@ -15,10 +15,13 @@
 
     <!-- define the template objects that are made available to the template -->
     <templateObject name="stringUtils" className="org.andromda.utils.StringUtilsHelper"/>
+    
+    <!-- 
     <templateObject name="jsfUtils" className="org.andromda.cartridges.jsf2.JSFUtils">
         <property reference="strictDateTimeFormat"/>
     </templateObject>
-    
+     -->
+     
     <!-- cartridge-templateObject merge-point-->
 
     <templatePostProcessor className="org.andromda.core.common.ImportBeautifierPostProcessorImpl"/>
@@ -276,17 +279,20 @@
         overwrite="false"
         outputToSingleFile="true"/>
 
+	<!-- 
     <template
         path="templates/jsf2/utils/ControllerBase.java.vsl"
         outputPattern="$stringUtils.replace($managedBeansPackage, '.', '/')/${className}.java"
         outlet="managed-beans"
         overwrite="true"/>
         
+    
     <template
         path="templates/jsf2/utils/CrudControllerBase.java.vsl"
         outputPattern="$stringUtils.replace($managedBeansPackage, '.', '/')/${className}.java"
         outlet="managed-beans"
         overwrite="true"/>
+     -->
         
     <template
         path="templates/jsf2/forms/Form.java.vsl"
@@ -421,6 +427,7 @@
         </modelElements>
     </template>
 
+	<!-- 
     <template
         path="templates/jsf2/utils/Messages.java.vsl"
         outputPattern="$stringUtils.replace($managedBeansPackage, '.', '/')/Messages.java"
@@ -450,6 +457,7 @@
         outputPattern="$stringUtils.replace($managedBeansPackage, '.', '/')/JsfExceptionHandler.java"
         outlet="managed-beans"
         overwrite="true"/>
+     -->
 
     <template
         path="templates/jsf2/exception/ValidationException.java.vsl"
@@ -457,11 +465,13 @@
         outlet="exceptions"
         overwrite="true"/>
 
+<!--  
     <template
         path="templates/jsf2/utils/FacesContextUtils.java.vsl"
         outputPattern="$stringUtils.replace($managedBeansPackage, '.', '/')/${className}.java"
         outlet="managed-beans"
         overwrite="true"/>
+-->       
 
     <template
         path="templates/jsf2/views/jsp/index.jsp.vsl"

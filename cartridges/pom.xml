@@ -74,6 +74,20 @@
     <build>
         <pluginManagement>
             <plugins>
+            	<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+					<source>11</source>
+					<target>11</target>
+					<compilerVersion>11</compilerVersion>
+					<compilerArgument>-Xlint:cast,unchecked,fallthrough,finally,serial</compilerArgument>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<encoding>ISO-8859-1</encoding>
+					<fork>true</fork>
+					</configuration>
+				</plugin>
                 <plugin>
                     <groupId>org.andromda.maven.plugins</groupId>
                     <artifactId>andromda-maven-plugin</artifactId>
@@ -196,6 +210,7 @@
         <module>andromda-jsf2</module>
     </modules>
     <properties>
+    	<enforcer.fail>false</enforcer.fail>
         <maven.build.src>${project.basedir}/target/src/main/java</maven.build.src>
         <java.src.dir>${project.build.sourceDirectory}</java.src.dir>
         <test.src.dir>${project.basedir}/src/test</test.src.dir>

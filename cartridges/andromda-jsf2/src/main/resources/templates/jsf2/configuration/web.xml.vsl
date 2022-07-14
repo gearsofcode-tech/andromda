@@ -184,14 +184,7 @@
     </filter>
 
 #end
-#if($trinidad)    
-    <!-- Trinidad Filter -->
-    <filter>
-        <filter-name>Trinidad Filter</filter-name>
-        <filter-class>org.apache.myfaces.trinidad.webapp.TrinidadFilter</filter-class>
-    </filter>
-    
-#end
+
     <!-- filter-mapping merge-point -->
 
 #if($authTypeSecurityFilter)
@@ -201,39 +194,19 @@
     </filter-mapping>
 
 #end
-#if($trinidad)    
-    <filter-mapping>
-        <filter-name>Trinidad Filter</filter-name>
-        <url-pattern>*.${facesServletExtension}</url-pattern>
-    </filter-mapping>
-#end
+
 
     <!-- listener merge-point -->
     <!-- servlet merge-point -->
     <servlet>
-        <servlet-name>Faces Servlet</servlet-name>
-        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-#if($trinidad)    
-    <!-- resource loader servlet -->
-    <servlet>
-        <servlet-name>Trinidad Resources Servlet</servlet-name>
-        <servlet-class>org.apache.myfaces.trinidad.webapp.ResourceServlet</servlet-class>
-    </servlet>
-#end
-
-    <!-- servlet-mapping merge-point -->
-    <servlet-mapping>
-        <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>*.${facesServletExtension}</url-pattern>
-    </servlet-mapping>
-#if($trinidad)    
-    <servlet-mapping>
-        <servlet-name>Trinidad Resources Servlet</servlet-name>
-        <url-pattern>/adf/*</url-pattern>
-    </servlet-mapping>
-#end
+    <servlet-name>Faces Servlet</servlet-name>
+	    <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>Faces Servlet</servlet-name>
+	    <url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
 
     <session-config>
         <session-timeout>$sessionTimeout</session-timeout>
