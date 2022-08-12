@@ -18,6 +18,11 @@
             <documentation>
                 Defines the locations to which output is generated.
             </documentation>
+            <property name="frontend-view">
+                <documentation>
+                    The directory to which VueJs files are generated.
+                </documentation>
+            </property>
             <property name="entities">
                 <documentation>
                     The directory to which hibernate entities are generated.  Please <strong>NOTE</strong>

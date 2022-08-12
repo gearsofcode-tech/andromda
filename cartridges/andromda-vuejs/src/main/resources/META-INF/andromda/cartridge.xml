@@ -104,6 +104,18 @@
     <!-- cartridge-resource merge-point -->
 
     <!-- common templates -->
+     <template
+        path="templates/vuejs/EntityView.vsl"
+        outputPattern="$generatedFile"
+        outlet="frontend-view"
+        overwrite="true">
+        <modelElements variable="entity">
+            <modelElement>
+                <type name="org.andromda.cartridges.hibernate.metafacades.HibernateEntity"/>
+            </modelElement>
+        </modelElements>
+    </template>
+    
     <template
         path="templates/hibernate/HibernateEntity.vsl"
         outputPattern="$generatedFile"
