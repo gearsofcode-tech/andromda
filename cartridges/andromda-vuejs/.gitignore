@@ -1,0 +1,6 @@
+/target/
+/andromda-hibernate.log
+/andromda-meta.log
+/andromda-query.log
+/andromda-validation.log
+/andromda.log
