@@ -23,6 +23,16 @@
                     The directory to which VueJs files are generated.
                 </documentation>
             </property>
+            <property name="frontend-root">
+                <documentation>
+                    The directory to which VueJs files are generated.
+                </documentation>
+            </property>
+            <property name="frontend-router">
+                <documentation>
+                    The directory to which VueJs files are generated.
+                </documentation>
+            </property>
             <property name="entities">
                 <documentation>
                     The directory to which hibernate entities are generated.  Please <strong>NOTE</strong>

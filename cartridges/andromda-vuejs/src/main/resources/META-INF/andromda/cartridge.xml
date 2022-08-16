@@ -117,6 +117,34 @@
     </template>
     
     <template
+        path="templates/vuejs/App.vue.vsl"
+        outputPattern="App.vue"
+        outlet="frontend-root"
+        overwrite="true"
+        outputToSingleFile="true"
+        outputOnEmptyElements="false">
+        <modelElements variable="entities">
+            <modelElement>
+                <type name="org.andromda.metafacades.uml.Entity"/>
+            </modelElement>
+        </modelElements>
+    </template>
+    
+    <template
+        path="templates/vuejs/Router.vsl"
+        outputPattern="index.js"
+        outlet="frontend-router"
+        overwrite="true"
+        outputToSingleFile="true"
+        outputOnEmptyElements="false">
+        <modelElements variable="entities">
+            <modelElement>
+                <type name="org.andromda.metafacades.uml.Entity"/>
+            </modelElement>
+        </modelElements>
+    </template>
+       
+    <template
         path="templates/hibernate/HibernateEntity.vsl"
         outputPattern="$generatedFile"
         outlet="entities"
