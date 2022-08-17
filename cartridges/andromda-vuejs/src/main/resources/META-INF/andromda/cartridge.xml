@@ -103,7 +103,7 @@
 
     <!-- cartridge-resource merge-point -->
 
-    <!-- common templates -->
+    <!-- VueJS templates -->
      <template
         path="templates/vuejs/EntityView.vsl"
         outputPattern="$generatedFile"
@@ -143,7 +143,22 @@
             </modelElement>
         </modelElements>
     </template>
-       
+    
+    <!-- Spring Data JPA templates -->
+    <template
+        path="templates/spring-data-jpa/CrudRepository.vsl"
+        outputPattern="$generatedFile"
+        outlet="entities"
+        overwrite="true">
+        <modelElements variable="entity">
+            <modelElement>
+                <type name="org.andromda.cartridges.hibernate.metafacades.HibernateEntity"/>
+            </modelElement>
+        </modelElements>
+    </template>
+
+	<!-- hibernate cartridge templates -->
+	       
     <template
         path="templates/hibernate/HibernateEntity.vsl"
         outputPattern="$generatedFile"
@@ -222,17 +237,6 @@
         </modelElements>
     </template>
 
-    <template
-        path="templates/hibernate/usertypes/HibernateByteBlobType.vsl"
-        outputPattern="$generatedFile"
-        outlet="user-types"
-        overwrite="true"/>
-
-    <template
-        path="templates/hibernate/usertypes/HibernateStringClobType.vsl"
-        outputPattern="$generatedFile"
-        outlet="user-types"
-        overwrite="true"/>
 
     <template
         path="templates/hibernate/ejb/ejb-jar.xml.vsl"

@@ -1,0 +1,11 @@
+#set ($generatedFile = "${entity.packagePath}/${entity.entityName}Repository.java")
+#if ($stringUtils.isNotBlank($entity.packageName))
+package $entity.packageName;
+#end
+import org.springframework.data.repository.CrudRepository;
+
+
+public interface ${entity.entityName}Repository extends CrudRepository<${entity.entityName}, Long> {
+
+  
+}
