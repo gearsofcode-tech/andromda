@@ -1,0 +1,20 @@
+#set ($generatedFile = "${entity.packagePath}/service/${entity.entityName}Service.java")
+#set ($repositoryVariable = $stringUtils.uncapitalize($entity.name) + "Repository")
+#if ($stringUtils.isNotBlank($entity.packageName))
+package ${entity.packageName}.service;
+#end
+
+import org.springframework.beans.factory.annotation.Autowired;
+import ${entity.packageName}.*;
+
+
+public class ${entity.entityName}Service {
+
+	@Autowired
+	private ${entity.entityName}Repository $repositoryVariable;
+	
+    public Iterable<${entity.entityName}> findAll() {
+        return ${repositoryVariable}.findAll();
+    }
+
+}
