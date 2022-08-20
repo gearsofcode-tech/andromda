@@ -18,6 +18,11 @@
             <documentation>
                 Defines the locations to which output is generated.
             </documentation>
+            <property name="backend-root">
+                <documentation>
+                    The directory to which SpringMVC files are generated.
+                </documentation>
+            </property>
             <property name="frontend-view">
                 <documentation>
                     The directory to which VueJs files are generated.

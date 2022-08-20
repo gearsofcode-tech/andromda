@@ -156,6 +156,19 @@
             </modelElement>
         </modelElements>
     </template>
+    
+    <!-- Spring MVC templates -->
+    <template
+        path="templates/spring-mvc/Controller.vsl"
+        outputPattern="$generatedFile"
+        outlet="backend-root"
+        overwrite="true">
+        <modelElements variable="entity">
+            <modelElement>
+                <type name="org.andromda.cartridges.hibernate.metafacades.HibernateEntity"/>
+            </modelElement>
+        </modelElements>
+    </template>
 
 	<!-- hibernate cartridge templates -->
 	       

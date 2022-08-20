@@ -1,0 +1,23 @@
+#set ($generatedFile = "${entity.packagePath}/controller/${entity.entityName}Controller.java")
+#set ($serviceVariable = $stringUtils.uncapitalize($entity.name) + "Service")
+#if ($stringUtils.isNotBlank($entity.packageName))
+package ${entity.packageName}.controller;
+#end
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import ${entity.packageName}.*;
+
+@RestController
+public class ${entity.entityName}Controller {
+
+	@Autowired
+	private ${entity.entityName}Service $serviceVariable;
+	
+    @GetMapping("/${entity.entityName}")
+    public List<${entity.entityName}> findAll() {
+        return ${serviceVariable}.findAll();
+    }
+
+}
