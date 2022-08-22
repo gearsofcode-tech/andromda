@@ -8,14 +8,23 @@
 package $entity.packageName;
 #end
 
+
 #if(!$entity.generalization)
 import java.io.Serializable;
-
 #end
+
+#if (!$entity.specializations.empty)
+import javax.persistence.MappedSuperclass;
+@MappedSuperclass
+#else
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
+#end
+
 /**
 $entity.getDocumentation(" * ")
  */
-#if ($hibernateEntityAnnotations)
+#if ($hibernateEntityAnnotations && $entity.specializations.empty)
 @javax.persistence.Entity
 @javax.persistence.Table(name = "${entity.tableName}"#if($stringUtils.isNotBlank($entity.schema)), schema="$entity.schema"#end)
 ##, uniqueConstraints=@UniqueConstraint(name="",columnNames={"", ""}

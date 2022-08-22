@@ -3,11 +3,12 @@
 #if ($stringUtils.isNotBlank($entity.packageName))
 package ${entity.packageName}.service;
 #end
+import org.springframework.stereotype.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import ${entity.packageName}.*;
 
-
+@Service
 public class ${entity.entityName}Service {
 
 	@Autowired
