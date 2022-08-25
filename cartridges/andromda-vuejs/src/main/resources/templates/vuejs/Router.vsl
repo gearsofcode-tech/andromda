@@ -18,11 +18,13 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     #foreach($entity in $entities)    
+    #if ($entity.specializations.empty)
     {
       path: '/${entity.name}',
       name: '${entity.name}',
       component: () => import('../views/${entity.name}View.vue')
     },
+    #end
     #end
     ]
 })

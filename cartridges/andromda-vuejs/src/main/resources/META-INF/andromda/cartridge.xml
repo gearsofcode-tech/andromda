@@ -108,7 +108,21 @@
         path="templates/vuejs/EntityView.vsl"
         outputPattern="$generatedFile"
         outlet="frontend-view"
-        overwrite="true">
+        overwrite="true"
+        generateEmptyFiles="false">
+        <modelElements variable="entity">
+            <modelElement>
+                <type name="org.andromda.cartridges.hibernate.metafacades.HibernateEntity"/>
+            </modelElement>
+        </modelElements>
+    </template>
+    
+    <template
+        path="templates/vuejs/Store.vsl"
+        outputPattern="$generatedFile"
+        outlet="frontend-store"
+        overwrite="true"
+        generateEmptyFiles="false">
         <modelElements variable="entity">
             <modelElement>
                 <type name="org.andromda.cartridges.hibernate.metafacades.HibernateEntity"/>

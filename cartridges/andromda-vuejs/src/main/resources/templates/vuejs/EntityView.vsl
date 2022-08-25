@@ -1,4 +1,5 @@
 #set ($generatedFile = "${entity.entityName}View.vue")
+#if ($entity.specializations.empty)
 <template>
   <div>
     <h1>${entity.entityName}</h1>
@@ -10,7 +11,7 @@
     </tr>
     <tr v-for="entity in entities">
       #foreach ($attribute in $entity.getAttributes(true))
-      <td>${attribute.name}</td>
+      <td>{{entity.${attribute.name}}}</td>
       #end
     </tr>
   </table>
@@ -18,13 +19,23 @@
 </template>
 
 <script>
+import { use${entity.name}Store } from '@/stores/${entity.name}Store.js'
+
+
 export default{
-  data() {
-    return {
-      entities: [{#foreach ($attribute in $entity.getAttributes(true))
-      ${attribute.name}: '${attribute.name}',
-      #end}]
+  
+
+    data() {
+        const store = use${entity.name}Store();        
+        return {
+            entities: store.findAll
+        }
+    },
+
+    mounted(){
+        const store = use${entity.name}Store();        
+        store.fetchAll();
     }
-  }
 }
 </script>
+#end

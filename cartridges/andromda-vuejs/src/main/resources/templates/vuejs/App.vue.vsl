@@ -14,7 +14,9 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         #foreach($entity in $entities)
+        #if ($entity.specializations.empty)
         <RouterLink to="/${entity.name}">${entity.name}</RouterLink>
+        #end
         #end
       </nav>
     </div>

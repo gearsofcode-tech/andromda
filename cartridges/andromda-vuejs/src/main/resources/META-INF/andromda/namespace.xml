@@ -28,6 +28,11 @@
                     The directory to which VueJs files are generated.
                 </documentation>
             </property>
+            <property name="frontend-store">
+                <documentation>
+                    The directory to which VueJs files are generated.
+                </documentation>
+            </property>
             <property name="frontend-root">
                 <documentation>
                     The directory to which VueJs files are generated.
